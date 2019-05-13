@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>90s Trivia!</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="topText">
+            <h2>90s Trivia!</h2>
+            Question: <text id="number001">0</text>
+            <br />
+            <div id="disappear002">
+                Score: <text id="score">0</text>
+                <br> Time Remaining: <text id="timer"> 30</text></div>
+            <hr />
+            <div id="message001"></div><br />
+        </div>
+        <div id="bottomText">
+            <div id="question001"></div>
+            <div id="option001"></div>
+            <div id="option002"></div>
+            <div id="option003"></div>
+            <div id="option004"></div>
+            <div id="answer001"></div>
+            <div id="startBox">
+                <div id="disappear001">
+                    <img id="poster" src="assets/images/poster.jpg" alt="90s Poster" width="100%">
+                    <br>
+                    <button class="buttons001" onclick="begin001()">Start</button>
+                </div>
+            </div>
+            <div id="next001"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>
