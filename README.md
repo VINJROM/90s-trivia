@@ -3,7 +3,7 @@
 
 *** What this does ***
 
-This is a five question trivia game based on 90s movies, tv shows, and music. The user picks from four options and is given the correct answer after each choice. The user's score is visible at the top of the screen along with the question number.
+This is a five question trivia game based on 90s movies, tv shows, and music. The user picks from four options and is given the correct answer after each choice. The user's question number and score are visible at the top and given a total score at the end of the game. 
 
 
 *** What is still under construction ***
