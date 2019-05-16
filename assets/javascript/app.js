@@ -3,7 +3,7 @@
 // Array where our questions will be stored.
 var q = ["1. What is the name of Will Smith’s character in Independence Day?<br /><br />", "2. What year was Forrest Gump released?<br /><br />", "3.  Which musical star was knighted by Queen Elizabeth II in 1998? <br /><br />", "4. Which 90s TV show features characters with the name Tommy, Zack, Kimberly, Billy, and Trini? <br /><br />", "5. What movie was Robin Williams’ first animated film?<br /><br />"];
 
-// Array where the first options will be stored.
+// Array where the first set of options will be stored.
 var a1 = ["<button class=buttons002 onclick=q1i()>Avery J. Johnson</button>",
     "<button class=buttons002 onclick=q2i()>1991</button>",
     "<button class=buttons002 onclick=q3i()>David Bowie</button>",
@@ -12,7 +12,7 @@ var a1 = ["<button class=buttons002 onclick=q1i()>Avery J. Johnson</button>",
 
 ];
 
-// Array where the second options will be stored.
+// Array where the second set of options will be stored.
 var a2 = ["<button class=buttons002 onclick=q1i()>Captain James Price</button>",
     "<button class=buttons002 onclick=q2i()>1992</button>",
     "<button class=buttons002 onclick=q3i()>Paul David Hewson</button>",
@@ -20,7 +20,7 @@ var a2 = ["<button class=buttons002 onclick=q1i()>Captain James Price</button>",
     "<button class=buttons002 onclick=q5i()>Rabbit Ears</button>",
 ];
 
-// Array where the third options will be stored.
+// Array where the third set of options will be stored.
 var a3 = ["<button class=buttons002 onclick=q1c()>Captain Steve Miller</button>",
     "<button class=buttons002 onclick=q2i()>1993</button>",
     "<button class=buttons002 onclick=q3c()>Elton John</button>",
@@ -28,17 +28,17 @@ var a3 = ["<button class=buttons002 onclick=q1c()>Captain Steve Miller</button>"
     "<button class=buttons002 onclick=q5i()>The Timekeeper</button>",
 ];
 
-// Array where the fourth options will be stored.
+// Array where the fourth set of options will be stored.
 var a4 = ["<button class=buttons002 onclick=q1i()>Fresh Prince of Bel-Air</button>",
     "<button class=buttons002 onclick=q2c()>1994</button>",
     "<button class=buttons002 onclick=q3i()>Paul McCartney</button>",
     "<button class=buttons002 onclick=q4i()>Barney & Friends</button>",
     "<button class=buttons002 onclick=q5c()>Ferngully: The Last Rainforest</button>",
-
 ];
 
-// Arrays that will display whether answer is correct or incorrect and show question answer.
+// Array values that will display when correct answer is called.
 var c = ["Correct. Answer is Captain Steve Miller.", "Correct. Answer is 1994.", "Correct. Answer is Elton John.", "Correct. Answer is Mighty Morphin Power Rangers.", "Correct. Answer is Ferngully: The Last Rainforest."];
+// Array values that will display when incorrect answer is called; 
 var i = ["Incorrect. Answer is Captain Steve Miller.", "Incorrect. Answer is 1994.", "Incorrect. Answer is Elton John.", "Incorrect. Answer is Mighty Morphin Power Rangers.", "Incorrect. Answer is Ferngully: The Last Rainforest."];
 
 // Variable that will store question number and score.
@@ -49,69 +49,72 @@ s++;
 
 // FUNCTIONS =====================================================================================================
 
-// MY ATTEMPT AT MAKING A COUNT DOWN TIMER FOR EACH QUESTION. **WIP***
+// 50 second timer (10 seconds for each question).
 
-var count = 30;
+// Records seconds per quiz.
+var count = 50;
 
+// Stores intervalId.
 var intervalId;
 
-$("#button001").on("click", run);
+// When first button is clicked, run timer.
+$("#begin001").on("click", runTimer);
+console.log(count)
 
-function run() {
-    stop();
+// Reduces given time by 1 per second.
+function runTimer() {
     intervalId = setInterval(decrement, 1000);
 }
 
 function decrement() {
     count--;
-
-    $("#timer").html(number);
-    if (number <= 0) {
+    // When count reaches 0, stop counter and show end screen.
+    $("#timer").html(count);
+    if (count === 0) {
         stop();
-        alert("Time Up!");
+        end001();
     }
 }
-
+// Clears timer count.
 function stop() {
     clearInterval(intervalId);
 }
 
-run();
 
 // Hides starting text and displays first set of array questions and options.
-function begin001() {
-    disappear001.innerHTML = "";
-    message001.innerHTML = "";
-    question001.innerHTML = q[0];
-    option001.innerHTML = a1[0];
-    option002.innerHTML = a2[0];
-    option003.innerHTML = a3[0];
-    option004.innerHTML = a4[0];
-    number001.innerHTML = n++;
-}
+$('#begin001').click(function() {
+    $('#disappear001').hide();
+    $('#message001').hide();
+    $('#question001').append(q[0]);
+    $('#option001').append(a1[0]);
+    $('#option002').append(a2[0]);
+    $('#option003').append(a3[0]);
+    $('#option004').append(a4[0]);
+    $('#number001').append(n++);
+});
 
-// Correct question 1 response-- Hides text, displays green answer and Next button. Increments score.
+// Correct question 1 response-- Hides text, displays green answer and Next button. Increments score. ***.hide() DOES NOT WORK FOR THE QUESTION OPTIONS FOR SOME REASON.***
 function q1c() {
-    answer001.innerHTML = "<div id=green001>" + c[0] + "</div>";
+    $('#answer001').append("<div id=green001>" + c[0] + "</div>");
     option001.innerHTML = "";
     option002.innerHTML = "";
     option003.innerHTML = "";
     option004.innerHTML = "";
     next001.innerHTML = "<button class=buttons001 onclick=new002()>Next</button>";
-    score.innerHTML = s++;
+    $('#score').load(function() { s++; });
 }
 
 // Incorrect question 1 response-- Hides text, displays red answer and Next button.
 function q1i() {
-    answer001.innerHTML = "<div id=red001>" + i[0] + "</div>";
+    $('#answer001').append("<div id=red001>" + i[0] + "</div>");
     option001.innerHTML = "";
     option002.innerHTML = "";
     option003.innerHTML = "";
     option004.innerHTML = "";
-    next001.innerHTML = "<button class=buttons001 onclick=new002()>Next</button>";
+    $('#next001').append("<button class=buttons001 onclick=new002()>Next</button>");
 }
 
-// Displays second array of questions and options. Increments question number.
+// Displays second array of questions and options. Increments question number. ***.append() DOES NOT WORK FOR THE ANSWER ARRAY. >:( ***
 function new002() {
     question001.innerHTML = q[1];
     option001.innerHTML = a1[1];
@@ -245,8 +248,8 @@ function q5i() {
 
 // Hides text-- Displays End of Quiz and Repeat button.
 function end001() {
-    disappear002
-    message001.innerHTML = "End of Quiz.";
+    // disappear002
+    $('#endScore').append("End of Quiz. " + "Your score is " + s + " out of 5.");
     question001.innerHTML = "";
     option001.innerHTML = "";
     option002.innerHTML = "";
@@ -255,6 +258,8 @@ function end001() {
     next001.innerHTML = "<div id=topButton>" + "<button class=buttons001 onclick=repeat001()>Repeat</button>" + "</div>";
     answer001.innerHTML = "";
 }
+
+
 
 // Reloads game.
 function repeat001() {

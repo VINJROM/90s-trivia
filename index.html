@@ -14,25 +14,26 @@
         <div id="topText">
             <h2>90s Trivia!</h2>
             Question: <text id="number001">0</text>
-            <br />
-            <div id="disappear002">
-                Score: <text id="score">0</text>
-                <br> Time Remaining: <text id="timer"> 30</text></div>
+            <br /> Score: <text id="score">0</text>
+            <br> Time Remaining: <text id="timer"></text>
             <hr />
-            <div id="message001"></div><br />
+            <div id="endScore"></div>
+            <br/>
         </div>
         <div id="bottomText">
-            <div id="question001"></div>
-            <div id="option001"></div>
-            <div id="option002"></div>
-            <div id="option003"></div>
-            <div id="option004"></div>
-            <div id="answer001"></div>
+            <div id="questions-show">
+                <div id="question001"></div>
+                <div id="option001"></div>
+                <div id="option002"></div>
+                <div id="option003"></div>
+                <div id="option004"></div>
+                <div id="answer001"></div>
+            </div>
             <div id="startBox">
                 <div id="disappear001">
                     <img id="poster" src="assets/images/poster.jpg" alt="90s Poster" width="100%">
                     <br>
-                    <button class="buttons001" onclick="begin001()">Start</button>
+                    <button class="buttons001" id="begin001">Start</button>
                 </div>
             </div>
             <div id="next001"></div>
