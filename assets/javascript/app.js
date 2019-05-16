@@ -249,6 +249,7 @@ function q5i() {
 // Hides text-- Displays End of Quiz and Repeat button.
 function end001() {
     // disappear002
+    stop();
     $('#endScore').append("End of Quiz. " + "Your score is " + s + " out of 5.");
     question001.innerHTML = "";
     option001.innerHTML = "";
