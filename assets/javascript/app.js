@@ -1,7 +1,7 @@
 // Variables ===========================================================================================================
 
 // Array where our questions will be stored.
-var q = ["1. What is the name of Will Smith’s character in Independence Day?<br /><br />", "2. What year was Forrest Gump released?<br /><br />", "3.  Which musical star was knighted by Queen Elizabeth II in 1998? <br /><br />", "4. Which 90s TV show features characters with the name Tommy, Zack, Kimberly, Billy, and Trini? <br /><br />", "5. What movie was Robin Williams’ first animated film?<br /><br />"];
+var q = ["What is the name of Will Smith’s character in Independence Day?<br /><br />", "What year was Forrest Gump released?<br /><br />", "Which musical star was knighted by Queen Elizabeth II in 1998? <br /><br />", "Which 90s TV show features characters with the name Tommy, Zack, Kimberly, Billy, and Trini? <br /><br />", "What movie was Robin Williams’ first animated film?<br /><br />"];
 
 // Array where the first set of options will be stored.
 var a1 = ["<button class=buttons002 onclick=q1i()>Avery J. Johnson</button>",
@@ -52,33 +52,33 @@ s++;
 // 50 second timer (10 seconds for each question).
 
 // Records seconds per quiz.
-var count = 50;
+// var count = 50;
 
-// Stores intervalId.
-var intervalId;
+// // Stores intervalId.
+// var intervalId;
 
-// When first button is clicked, run timer.
-$("#begin001").on("click", runTimer);
-console.log(count)
+// // When first button is clicked, run timer.
+// $("#begin001").on("click", runTimer);
+// console.log(count)
 
-// Reduces given time by 1 per second.
-function runTimer() {
-    intervalId = setInterval(decrement, 1000);
-}
+// // Reduces given time by 1 per second.
+// function runTimer() {
+//     intervalId = setInterval(decrement, 1000);
+// }
 
-function decrement() {
-    count--;
-    // When count reaches 0, stop counter and show end screen.
-    $("#timer").html(count);
-    if (count === 0) {
-        stop();
-        end001();
-    }
-}
-// Clears timer count.
-function stop() {
-    clearInterval(intervalId);
-}
+// // Stops game and goes to end screen when countdown reaches 0.
+// // function decrement() {
+// //     count--;
+// //     $("#timer").html(count);
+// //     if (count === 0) {
+// //         stop();
+// //         end001();
+// //     }
+// // }
+// // Clears timer count.
+// function stop() {
+//     clearInterval(intervalId);
+// }
 
 
 // Hides starting text and displays first set of array questions and options.
@@ -96,6 +96,7 @@ $('#begin001').click(function() {
 // Correct question 1 response-- Hides text, displays green answer and Next button. Increments score. ***.hide() DOES NOT WORK FOR THE QUESTION OPTIONS FOR SOME REASON.***
 function q1c() {
     $('#answer001').append("<div id=green001>" + c[0] + "</div>");
+    document.getElementById('../images/steve-miller.gif');
     option001.innerHTML = "";
     option002.innerHTML = "";
     option003.innerHTML = "";

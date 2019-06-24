@@ -36,11 +36,15 @@ body {
 }
 
 #bottomText {
-    text-align: left;
+    text-align: center;
+}
+
+button.buttons002 {
+    width: 70%;
 }
 
 #next001 {
-    margin-top: 210px;
+    margin-top: 190px;
     text-align: center;
 }
 
