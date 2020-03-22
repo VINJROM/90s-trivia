@@ -1,14 +1,17 @@
-*** 90s TRIVIA! ***
+# 90s Trivia
 
-*** Description ***
-This is a five question trivia game based on 90s movies, tv shows, and music. The user picks from four options and is given the correct answer after each choice. The question number and score are visible at the top and the user's total score is shown at the end of the game. 
+### Feature Overview
 
-*** Motivation ***
-This game is part of the University of Minnesota's Web Application Development program in which students can utilize their newly-found JavaScript abilities.
+The Trivia Game is a basic HTML, CSS, and JavaScript/jQuery Trivia application which utilizes question timers which reset after every game. The questions are based on 90s movies, tv shows, and music.
 
-*** Result ***
-The result is an aesthetically challenging trivia-game in which players are timed and graded on their 90s knowledge.
+## Technologies Used
 
-*** Improvements ***
-Added questions and timer for each question along with Modern jQuery retouching. GIF display for each answer.
+## Technologies included in this application
 
+`HTML`
+
+`Bootstrap`:
+[Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+
+`jQuery`:
+[jQuery](https://jquery.com/)
