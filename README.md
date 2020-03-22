@@ -9,7 +9,7 @@ The Trivia Game is a basic HTML, CSS, and JavaScript/jQuery Trivia application w
 `HTML`
 
 `Bootstrap`:
--[Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+[Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 
 `jQuery`:
--[jQuery](https://jquery.com/)
+[jQuery](https://jquery.com/)
